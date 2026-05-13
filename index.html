@@ -306,16 +306,132 @@
     color: var(--deep-rose);
   }
 
+  .birthday-gift-box {
+    width: 100%;
+    max-width: 560px;
+    margin-bottom: 56px;
+    text-align: center;
+    position: relative;
+  }
+
+  .gift-ribbon-h {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+  }
+
+  .gift-ribbon-h::before,
+  .gift-ribbon-h::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to right, transparent, var(--blush), var(--rose), var(--blush), transparent);
+    height: 2px;
+    left: 0; right: 0;
+  }
+
+  .gift-ribbon-h::before { top: 0; }
+  .gift-ribbon-h::after  { bottom: 0; }
+
+  .gift-ribbon-v {
+    position: absolute;
+    top: 0; left: 50%; bottom: 0;
+    transform: translateX(-50%);
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--blush), var(--rose), var(--blush), transparent);
+    pointer-events: none;
+  }
+
+  .gift-box-inner {
+    padding: 48px 40px 44px;
+    background: var(--warm-white);
+    border: 1px solid var(--light-border);
+    border-radius: 2px;
+  }
+
+  .gift-bow {
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .gift-to-label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 10px;
+  }
+
+  .gift-happy-birthday {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(36px, 7vw, 56px);
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 20px;
+  }
+
+  .gift-happy-birthday em {
+    color: var(--rose);
+    font-style: normal;
+  }
+
+  .gift-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--blush);
+    margin: 0 auto 20px;
+  }
+
+  .gift-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--mid);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .gift-from {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-top: 24px;
+  }
+
   @media (max-width: 560px) {
     .rad-section { flex-direction: column; gap: 20px; }
     .service-header { flex-direction: column; gap: 4px; }
     body { padding: 40px 16px 60px; }
+    .gift-box-inner { padding: 36px 24px 32px; }
   }
 </style>
 </head>
 <body>
 
 <div class="gift-banner">✦ &nbsp; A birthday gift &nbsp; ✦</div>
+
+<div class="birthday-gift-box">
+  <div class="gift-ribbon-h"></div>
+  <div class="gift-ribbon-v"></div>
+  <div class="gift-box-inner">
+    <span class="gift-bow">🎀</span>
+    <p class="gift-to-label">A gift for you</p>
+    <h2 class="gift-happy-birthday">Happy <em>Birthday,</em><br>my love</h2>
+    <div class="gift-divider"></div>
+    <p class="gift-note">You deserve a day that's entirely, beautifully yours — starting with this.</p>
+    <p class="gift-from">With all my love &nbsp;✦</p>
+  </div>
+</div>
 
 <div class="hero">
   <p class="hero-eyebrow">For someone who deserves to feel</p>
