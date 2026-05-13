@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Birthday Gift — Styled by Rad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #FEFCF9;
+    --blush: #E8C5B0;
+    --rose: #C4856A;
+    --deep-rose: #8C4E38;
+    --dark: #2C1810;
+    --mid: #6B4238;
+    --light-border: rgba(196, 133, 106, 0.25);
+  }
+
+  html, body {
+    min-height: 100%;
+    background: var(--cream);
+    font-family: 'Jost', sans-serif;
+    color: var(--dark);
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 24px 80px;
+  }
+
+  .gift-banner {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 48px;
+  }
+
+  .hero {
+    text-align: center;
+    max-width: 560px;
+    margin-bottom: 56px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 20px;
+    color: var(--rose);
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(42px, 8vw, 68px);
+    line-height: 1.05;
+    color: var(--dark);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero-divider {
+    width: 48px;
+    height: 1px;
+    background: var(--blush);
+    margin: 0 auto 24px;
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--mid);
+    font-style: italic;
+  }
+
+  .services-section {
+    width: 100%;
+    max-width: 680px;
+    margin-bottom: 56px;
+  }
+
+  .section-label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--rose);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .service-card {
+    background: var(--warm-white);
+    border: 1px solid var(--light-border);
+    border-radius: 2px;
+    padding: 32px 36px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--blush), var(--rose));
+  }
+
+  .service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    gap: 20px;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--dark);
+    line-height: 1.2;
+  }
+
+  .service-duration {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--rose);
+    white-space: nowrap;
+    padding-top: 4px;
+  }
+
+  .service-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--rose);
+    margin-bottom: 12px;
+  }
+
+  .service-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--mid);
+  }
+
+  .rad-section {
+    width: 100%;
+    max-width: 680px;
+    background: var(--warm-white);
+    border: 1px solid var(--light-border);
+    border-radius: 2px;
+    padding: 40px;
+    margin-bottom: 56px;
+    display: flex;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .rad-initial {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--blush);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--deep-rose);
+    flex-shrink: 0;
+  }
+
+  .rad-bio {
+    flex: 1;
+  }
+
+  .rad-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .rad-title-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 14px;
+  }
+
+  .rad-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--mid);
+  }
+
+  .cta-section {
+    text-align: center;
+    max-width: 480px;
+    margin-bottom: 32px;
+  }
+
+  .cta-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 19px;
+    font-weight: 300;
+    color: var(--mid);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--light-border);
+    transition: color 0.15s;
+  }
+
+  .contact-item:hover .contact-value {
+    color: var(--deep-rose);
+  }
+
+  .contact-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rose);
+    flex-shrink: 0;
+  }
+
+  .contact-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--dark);
+    transition: color 0.15s;
+  }
+
+  .footer-contact {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--rose);
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .footer-contact a {
+    color: var(--rose);
+    text-decoration: none;
+  }
+
+  .footer-contact a:hover {
+    color: var(--deep-rose);
+  }
+
+  @media (max-width: 560px) {
+    .rad-section { flex-direction: column; gap: 20px; }
+    .service-header { flex-direction: column; gap: 4px; }
+    body { padding: 40px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="gift-banner">✦ &nbsp; A birthday gift &nbsp; ✦</div>
+
+<div class="hero">
+  <p class="hero-eyebrow">For someone who deserves to feel</p>
+  <h1 class="hero-title">Beautifully,<br><em>entirely herself.</em></h1>
+  <div class="hero-divider"></div>
+  <p class="hero-sub">A personal styling session with Radmila Dolokhanova — because your energy introduces you before you ever say a word.</p>
+</div>
+
+<div class="services-section">
+  <p class="section-label">Choose your experience</p>
+
+  <div class="service-card">
+    <div class="service-header">
+      <div class="service-name">Closet Audit</div>
+      <div class="service-duration">Up to 2 hours</div>
+    </div>
+    <p class="service-desc">Sort through your wardrobe item by item — creating "keep," "maybe," and "discard" piles. Rad guides you through trying on the maybes so every decision is intentional. The result: a closet that actually works for you.</p>
+  </div>
+
+  <div class="service-card">
+    <div class="service-header">
+      <div class="service-name">Audit + Closet Styling</div>
+      <div class="service-duration">Up to 3 hours</div>
+    </div>
+    <p class="service-desc">Everything in the audit, plus Rad builds 3–5 complete looks from what you already own. She'll flag any "gap" pieces and recommend exactly what would complete your wardrobe — no guesswork, no wasted purchases.</p>
+  </div>
+
+  <div class="service-card">
+    <div class="service-header">
+      <div class="service-name">Virtual Shopping Session</div>
+      <div class="service-duration">Flexible</div>
+    </div>
+    <p class="service-desc">Rad curates 4 complete outfits online with clickable links to every piece, tailored to your style and budget. Her specialty: capsule wardrobes — versatile, interchangeable pieces that reflect your personal, unique style.</p>
+  </div>
+</div>
+
+<div class="rad-section">
+  <div class="rad-initial">R</div>
+  <div class="rad-bio">
+    <div class="rad-name">Radmila Dolokhanova</div>
+    <div class="rad-title-label">Wardrobe Consultant &amp; Stylist · Minneapolis</div>
+    <p class="rad-quote">"I strongly believe that your energy introduces you before you introduce yourself. Your disheveled closet is my happy place — so let's get to work!"</p>
+  </div>
+</div>
+
+<div class="cta-section">
+  <p class="cta-text">Ready to book your session, or have a question? Reach out to Rad directly.</p>
+  <div class="contact-list">
+    <a href="tel:9524860580" class="contact-item">
+      <span class="contact-label">Phone</span>
+      <span class="contact-value">952.486.0580</span>
+    </a>
+    <a href="mailto:dolo.radmila@gmail.com" class="contact-item">
+      <span class="contact-label">Email</span>
+      <span class="contact-value">dolo.radmila@gmail.com</span>
+    </a>
+    <a href="https://www.instagram.com/raddydolo" class="contact-item">
+      <span class="contact-label">Instagram</span>
+      <span class="contact-value">@raddydolo</span>
+    </a>
+  </div>
+</div>
+
+<div class="footer-contact">
+  <a href="https://www.raddolo.com">raddolo.com</a>
+</div>
+
+</body>
+</html>
