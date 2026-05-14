@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Gift — QR Code</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #fff;
+    font-family: 'Jost', sans-serif;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 48px 52px;
+    border: 1.5px solid #E8C5B0;
+    border-radius: 2px;
+  }
+
+  .eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #C4856A;
+  }
+
+  .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 28px;
+    color: #2C1810;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .divider {
+    width: 36px;
+    height: 1px;
+    background: #E8C5B0;
+  }
+
+  #qrcode canvas,
+  #qrcode img {
+    display: block;
+  }
+
+  .url {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: #C4856A;
+    text-align: center;
+  }
+
+  @media print {
+    body { min-height: unset; }
+    .card { border-color: #ccc; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <p class="eyebrow">✦ &nbsp; A birthday gift &nbsp; ✦</p>
+  <p class="title">Scan to reveal<br>your gift</p>
+  <div class="divider"></div>
+  <div id="qrcode"></div>
+  <p class="url">xdeutschx.github.io/personal-stylist-birthday</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById('qrcode'), {
+    text: 'https://xdeutschx.github.io/personal-stylist-birthday/',
+    width: 220,
+    height: 220,
+    colorDark: '#2C1810',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M
+  });
+</script>
+</body>
+</html>
