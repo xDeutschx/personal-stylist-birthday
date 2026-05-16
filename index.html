@@ -408,38 +408,7 @@
     margin-top: 24px;
   }
 
-  .qr-section {
-    text-align: center;
-    margin-bottom: 56px;
-  }
-
-  .qr-section .section-label {
-    margin-bottom: 20px;
-  }
-
-  .qr-wrap {
-    display: inline-block;
-    padding: 16px;
-    background: var(--warm-white);
-    border: 1px solid var(--light-border);
-    border-radius: 2px;
-  }
-
-  .qr-wrap canvas,
-  .qr-wrap img {
-    display: block;
-  }
-
-  .qr-url {
-    font-family: 'Jost', sans-serif;
-    font-size: 11px;
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    color: var(--rose);
-    margin-top: 14px;
-  }
-
-  @media (max-width: 560px) {
+@media (max-width: 560px) {
     .rad-section { flex-direction: column; gap: 20px; }
     .service-header { flex-direction: column; gap: 4px; }
     body { padding: 40px 16px 60px; }
@@ -526,28 +495,9 @@
   </div>
 </div>
 
-<div class="qr-section">
-  <p class="section-label">Scan to open this page</p>
-  <div class="qr-wrap">
-    <div id="qrcode"></div>
-  </div>
-  <p class="qr-url">xdeutschx.github.io/personal-stylist-birthday</p>
-</div>
-
 <div class="footer-contact">
   <a href="https://www.raddolo.com">raddolo.com</a>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-<script>
-  new QRCode(document.getElementById('qrcode'), {
-    text: 'https://xdeutschx.github.io/personal-stylist-birthday/',
-    width: 160,
-    height: 160,
-    colorDark: '#2C1810',
-    colorLight: '#FEFCF9',
-    correctLevel: QRCode.CorrectLevel.M
-  });
-</script>
 </body>
 </html>
